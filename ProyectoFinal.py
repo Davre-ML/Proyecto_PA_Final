@@ -6,8 +6,8 @@ from reflex import State
 from rxconfig import config
 
 ##pages
-from ProyectoFinal.pages.registro import registro
-from ProyectoFinal.pages.inicio_sesion import inicio_sesion
+from Proyecto_PA_Final.pages.registro import registro
+from Proyecto_PA_Final.pages.inicio_sesion import inicio_sesion
 
 class State(rx.State):
     """The app state."""
