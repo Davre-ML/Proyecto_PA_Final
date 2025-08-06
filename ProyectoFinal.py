@@ -191,29 +191,93 @@ def side_bar() -> rx.Component:
 def cards() -> rx.Component:
     return rx.hstack(
         rx.box(
-            rx.text("Total Users", size="2", weight="bold"),
-            rx.text("1,234", size="4", weight="bold"),
-            width="100%",
-            padding="1em",
-            bg=rx.color("accent", 3),
-            border_radius="0.5em",
-        ),
-        rx.box(
-            rx.text("Active Projects", size="2", weight="bold"),
-            rx.text("56", size="4", weight="bold"),
-            width="100%",
-            padding="1em",
-            bg=rx.color("accent", 3),
-            border_radius="0.5em",
+            rx.card(
+                rx.vstack(
+                    rx.text("Usuario 1", size="3", weight="bold"),
+                    rx.text("Historia", size="2", weight="medium"),
+                    rx.text("Alguien sabe cuando inicio la revolución francesa?", size="2", weight="medium"),
+                ),
+                width="100%",
+                padding="1em",
+                bg=rx.color("accent", 3),
+                border_radius="0.5em",
+            ),
+            rx.button(
+                "Responder",
+                width="100%",
+                ),
+            rx.card(
+                rx.vstack(
+                    rx.text("Usuario 2", size="3", weight="bold"),
+                    rx.text("Historia", size="2", weight="medium"),
+                    rx.text("Alguien sabe cuando termino la revolución francesa?", size="2", weight="medium"),
+                ),
+                width="100%",
+                padding="1em",
+                bg=rx.color("accent", 3),
+                border_radius="0.5em",
+            ),
+            rx.button(
+                "Responder",
+                width="100%",
+                ),
+            rx.card(
+                rx.vstack(
+                    rx.text("Usuario 3", size="3", weight="bold"),
+                    rx.text("Historia", size="2", weight="medium"),
+                    rx.text("Alguien sabe cuando inicio la revolucion industrial?", size="2", weight="medium"),
+                ),
+                width="100%",
+                padding="1em",
+                bg=rx.color("accent", 3),
+                border_radius="0.5em",
+            ),
+            rx.button(
+                "Responder",
+                width="100%",
+                ),
+            rx.card(
+                rx.vstack(
+                    rx.text("Usuario 1", size="3", weight="bold"),
+                    rx.text("Historia", size="2", weight="medium"),
+                    rx.text("Alguien sabe cuando inicio la revolución francesa?", size="2", weight="medium"),
+                ),
+                width="100%",
+                padding="1em",
+                bg=rx.color("accent", 3),
+                border_radius="0.5em",
+            ),
+            rx.button(
+                "Responder",
+                width="100%",
+                ),
         ),
         spacing="2",
         width="100%",
     )
 def home() -> rx.Component:
-    return side_bar()
+    return rx.hstack(
+        side_bar(),
+        rx.vstack(
+            rx.box(
+                rx.text("Home", size="5", weight="bold"),
+                width="100%",
+                padding="1em",
+            ),
+        rx.scroll_area(
+            cards(),
+            spacing="2",
+            width="100%",
+            padding_x="1em",
+            )
+        ),
+        width="100%",
+        height="100%",
+    )
     
     
 app = rx.App()
 app.add_page(inicio_sesion, route="/")
 app.add_page(registro, route="/registro")
 app.add_page(home, route="/home")
+
